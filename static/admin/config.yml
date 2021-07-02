@@ -2,7 +2,7 @@ backend:
   name: github
   branch: master
   repo: mode2021/mde-portfolio
-  site_domain: drmode.netlify.com
+  site_domain: drmde.netlify.com
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
     update: "Update {{collection}} “{{slug}}”"
