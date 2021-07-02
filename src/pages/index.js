@@ -1,18 +1,28 @@
 import * as React from "react"
-import IndexPageTempate from '../templates/index-page'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
-const IndexPage = ({ data: { markdownRemark: { html, frontmatter: {title} } } }) => (
-  <IndexPageTempate
-    title={ title }
-    html={ html }
-  >
-    <div>
-      <ul>
-        <Link to='/about'>About</Link>
-      </ul>
-    </div>
-  </IndexPageTempate>
+import IndexPageTemplate from '../templates/index-page'
+import Navbar from '../components/navbar'
+import '../components/all.sass'
+
+const IndexPage = ({ data: { markdownRemark: { html, frontmatter: {f_img, f_img_alt} } } }) => (
+  <index>
+
+    <section className='container is-max-desktop'>
+      <Navbar />
+    </section>
+
+    <section className='hero is-fullheight-with-navbar'>
+      <div className='hero-body'>
+        <IndexPageTemplate
+          f_img={f_img}
+          f_img_alt={f_img_alt}
+          html={html}
+        />
+      </div>
+    </section>
+
+  </index>
 )
 
 export default IndexPage
@@ -22,8 +32,10 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: {pageKey: {eq: "index"}}) {
       html
       frontmatter {
-        title
+        f_img
+        f_img_alt
       }
     }
   }
 `
+ 

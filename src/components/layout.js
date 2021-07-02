@@ -1,18 +1,19 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import Navbar from './navbar'
+import './all.sass'
 
 const Layout = ({ children }) => (
-  <main>
-    <section>
-      <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/about'>About</Link></li>
-      </ul>
-    </section>
-    <section>
+  <layout>
+
+    <section className='container is-max-desktop'>
+
+      <Navbar />
+
       { children }
+
     </section>
-  </main>
+
+  </layout>
 )
 
 

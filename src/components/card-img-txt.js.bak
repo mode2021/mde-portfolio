@@ -1,0 +1,27 @@
+import * as React from 'react'
+
+const CardImgTxt = ({
+  src,
+  alt,
+  txt,
+}) => (
+   <div className='media'>
+      <div className='media is-align-items-center' style={{padding: 0, width:'100%'}}>
+        <div className='media-left' style={{width: '50%'}}>
+          <figure className='image'>
+            <img src={src} alt={alt}/>
+          </figure>
+        </div>
+
+        <div className='media-content'>
+          <span className='has-text-centered'>
+            <span className='icon'><i className='fa fa-quote-left' /></span>
+              <p className='title'>{txt}</p>
+            <span className='icon'><i className='fa fa-quote-right' /></span>
+          </span>
+        </div>
+      </div>
+  </div>
+)
+
+export default CardImgTxt

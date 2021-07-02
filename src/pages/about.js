@@ -1,14 +1,15 @@
 import * as React from "react"
 import { graphql } from 'gatsby'
+import Layout from '../components/layout'
 import AboutPageTempate from '../templates/about-page'
 
 const AboutPage = ({ data: { markdownRemark: { html, frontmatter: {title} } } }) => (
-  <AboutPageTempate
-    title={ title }
-    html={ html }
-  >
-    <p> more bla bla bla...</p>
-  </AboutPageTempate>
+  <Layout>
+    <AboutPageTempate
+      title={ title }
+      html={ html }
+      />
+  </Layout>
 )
 
 export const pageQuery = graphql`

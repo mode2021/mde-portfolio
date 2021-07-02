@@ -1,13 +1,21 @@
 import * as React from "react"
-import MarkdownHTML from '../components/markdown-html'
+import CardImgTxt from '../components/card-img-txt'
 
 
-const IndexPageTempate = ({ title, html, content, children }) => (
-  <main>
-    <h1>{ title }</h1>
-    <MarkdownHTML html={html} content={content} />
+const IndexPageTemplate = ({
+    f_img, f_img_alt, html, content,
+    //title,
+    children
+  }) => (
+  <>
+    <CardImgTxt
+      src={f_img}
+      alt={f_img_alt}
+      html={html}
+      content={content}
+    />
     { children }
-  </main>
+  </>
 )
 
-export default IndexPageTempate
+export default IndexPageTemplate
